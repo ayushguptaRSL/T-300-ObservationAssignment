@@ -1,17 +1,13 @@
-//
-//  ObservableAssignmentApp.swift
-//  ObservableAssignment
-//
-//  Created by Ayush Gupta 2 on 17/09/26.
-//
-
 import SwiftUI
 
 @main
 struct ObservableAssignmentApp: App {
+    @State var viewModel: BooksViewModel = BooksViewModel()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LibraryHomeScreenView()
+                .environment(viewModel)
         }
     }
 }
